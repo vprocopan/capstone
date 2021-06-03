@@ -2,7 +2,7 @@ pipeline {
   agent any
 
   environment {
-    APP_NAME = "simple_node_app"
+    APP_NAME = "simple_nginx_app"
     AWS_ACCOUNT = "915323986442"
   }
 
@@ -31,7 +31,7 @@ pipeline {
 
     stage('Scan Docker Image') {
       steps {
-        aquaMicroscanner imageName: 'simple_node_app:latest', notCompliesCmd: 'exit 4', onDisallowed: 'fail', outputFormat: 'html'
+        aquaMicroscanner imageName: 'simple_nxinx_app:latest', notCompliesCmd: 'exit 4', onDisallowed: 'fail', outputFormat: 'html'
       }
     }
 
