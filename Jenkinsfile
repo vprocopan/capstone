@@ -12,7 +12,7 @@ pipeline {
         stage('Test') { 
             steps {
                 echo  'Testing..'
-                sh 'hadolint ./Dockerfile'
+                sh 'hadolint ./Dockerfile | tee -a hadolint_lint.txt'
             }
         }
         stage('Deploy') { 
