@@ -7,14 +7,14 @@ pipeline {
                 sh '''
                     ls -lah
                     '''
-                script{
+                
                 docker.withRegistry('', dockerhub-credentials)
                 {
                     sh 'docker build -t capstone-vprocopan .'
                     sh 'docker push vprocopan/capstone-vprocopan'
 
                 }
-                }
+                
             }
         }
         stage('Test') { 
