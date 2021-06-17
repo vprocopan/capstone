@@ -7,6 +7,7 @@ pipeline {
                 sh '''
                     ls -lah
                     '''
+                sh 'docker build -t capstone-vprocopan .'
             }
         }
         stage('Test') { 
