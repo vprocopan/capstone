@@ -7,7 +7,8 @@ pipeline {
                 sh '''
                     ls -lah
                     '''
-                withDockerRegistry([url: "", credentialsId: "dockerhub-credentials"]){
+                docker.withRegistry('', dockerhub-credentials)
+                {
                     sh 'docker build -t capstone-vprocopan .'
                     sh 'docker push vprocopan/capstone-vprocopan'
 
