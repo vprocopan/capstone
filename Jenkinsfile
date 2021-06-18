@@ -10,7 +10,7 @@ pipeline {
                 
                 withDockerRegistry([url: "", credentialsId: "dockerhub-credentials"])
                 {
-                    sh 'docker build -t capstone-vprocopan .'
+                    sh 'docker build -t vprocopan/capstone-vprocopan .'
                     sh 'docker push vprocopan/capstone-vprocopan'
 
                 }
