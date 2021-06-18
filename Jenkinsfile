@@ -28,6 +28,7 @@ pipeline {
                 echo  'Deploying..'
                 dir('k8s') {
                     withAWS(credentials: 'aws-credentials', region: 'eu-west-2') {
+                                sh 'kubectl apply -f capstone-k8s.yaml'
                             }
                         }
             }
