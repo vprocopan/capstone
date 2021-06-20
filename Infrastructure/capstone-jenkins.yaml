@@ -1,6 +1,6 @@
 ---
 Description: >
-  Amanda Souza / Udacity 2019
+  Vitalie Procopan / Udacity 2021
   CloudFormation file to create EC2 instances.
 Parameters:
   Capstone:
