@@ -3,7 +3,7 @@ kind: ClusterConfig
 
 metadata:
   name: capstone
-  region: eu-west-1
+  region: us-west-2
 
 vpc:
   id: "vpc-07871fff32801bfb9"

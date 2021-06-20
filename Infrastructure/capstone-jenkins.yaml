@@ -22,7 +22,7 @@ Parameters:
 
 Mappings:
   CapstoneRegion:
-    eu-west-1:
+    us-west-2:
       HVM64: ami-06358f49b5839867c
 
 Resources:
