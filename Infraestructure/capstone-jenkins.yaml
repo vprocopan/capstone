@@ -1,6 +1,6 @@
 ---
 Description: >
-  Vitalie Procopan / Udacity 2021
+  Amanda Souza / Udacity 2019
   CloudFormation file to create EC2 instances.
 Parameters:
   Capstone:
@@ -22,7 +22,7 @@ Parameters:
 
 Mappings:
   CapstoneRegion:
-    us-west-2:
+    eu-west-1:
       HVM64: ami-06358f49b5839867c
 
 Resources:

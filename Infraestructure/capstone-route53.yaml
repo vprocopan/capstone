@@ -1,6 +1,6 @@
 ---
 Description: >
-  Vitalie Procopan / Udacity 2021 / Capstone
+  Amanda Souza / Udacity 2019 / Capstone
   CloudFormation file to allow EC2 instances to manage Web App S3.
 Parameters:
   Capstone:

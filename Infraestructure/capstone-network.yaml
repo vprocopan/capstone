@@ -1,6 +1,6 @@
 ---
 Description: >
-  Vitalie Procopan / Udacity 2021 / Capstone Project
+  Amanda Souza / Udacity 2019 / Capstone Project
   CloudFormation file to create VPC to EKS.
 Parameters:
   Capstone:

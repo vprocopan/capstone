@@ -1,13 +1,13 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: capstone-vprocopan
+  name: capstone-bcrypt
   labels:
-    app: capstone-vprocopan
+    app: capstone-bcrypt
 spec:
   selector:
     matchLabels:
-      app: capstone-vprocopan
+      app: capstone-bcrypt
   strategy:
     type: RollingUpdate
     rollingUpdate:
@@ -18,7 +18,7 @@ spec:
   template:
     metadata:
       labels:
-        app: capstone-vprocopan
+        app: capstone-bcrypt
     spec:
       terminationGracePeriodSeconds: 60
       affinity:
@@ -29,7 +29,7 @@ spec:
               - key: "app"
                 operator: In
                 values:
-                - capstone-vprocopan
+                - capstone-bcrypt
               - key: "temporary"
                 operator: In
                 values:
@@ -37,7 +37,7 @@ spec:
             topologyKey: "kubernetes.io/hostname"
       containers:
       - name: udacity
-        image: vprocopan/capstone-vprocopan
+        image: aminueza/capstone-bcrypt:1ec1f86
         command: [
           "/bin/bash", 
           "-c", 
@@ -68,11 +68,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: capstone-vprocopan
+  name: capstone-bcrypt
 spec:
   type: LoadBalancer
   selector:
-    app: capstone-vprocopan
+    app: capstone-bcrypt
   ports:
     - name: http
       protocol: TCP
@@ -87,12 +87,12 @@ spec:
 kind: HorizontalPodAutoscaler
 apiVersion: autoscaling/v1
 metadata:
-  name: capstone-vprocopan
+  name: capstone-bcrypt
 spec:
   scaleTargetRef:
     apiVersion: extensions/v1beta1
     kind: Deployment
-    name: capstone-vprocopan
+    name: capstone-bcrypt
   minReplicas: 2
   maxReplicas: 5
   targetCPUUtilizationPercentage: 80
@@ -101,7 +101,7 @@ spec:
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: capstone-vprocopan
+  name: capstone-bcrypt
   annotations:
     ingress.kubernetes.io/force-ssl-redirect: "true"
     kubernetes.io/ingress.class: "ingress-nginx"
@@ -110,10 +110,10 @@ metadata:
 
 spec:
   rules:
-  - host: capstone.intercode.company
+  - host: bcrypt.amandasouza.net
     http:
       paths:
       - path: /
         backend:
-          serviceName: capstone-vprocopan
+          serviceName: capstone-bcrypt
           servicePort: 80

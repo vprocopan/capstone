@@ -1,10 +1,11 @@
-FROM ubuntu:18.04
+FROM node:12.13.1-stretch-slim
 
-RUN apt-get update
-RUN apt-get install -y nginx
+WORKDIR /bcrypt
 
-COPY nginx.conf /etc/nginx/nginx.conf
-COPY ./www /www
+COPY app/ /bcrypt/
 
-EXPOSE 80
-CMD ["nginx"]
+RUN echo "[INFO]::[install-run-nmp]" && \
+    npm install && \
+    npm run build
+
+CMD ["/bin/bash", "-c", "npm run serve"]
