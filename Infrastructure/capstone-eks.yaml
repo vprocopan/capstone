@@ -1,6 +1,6 @@
 ---
 Description: >
-  Amanda Souza / Udacity 2019 / Capstone Project
+  Vitalie Procopan / Udacity 2021 / Capstone Project
   CloudFormation file to create EKS.
 Parameters:
   CapstonePipeline:
